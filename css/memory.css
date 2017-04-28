@@ -1,22 +1,52 @@
 h1 {
   text-align: center;
+  font-family: 'metroregular';
 }
 
 #board {
-  margin: auto;
-  margin-top: 30px;
-  width: 970px;
-  height: 800px;
+  padding: 9px;
+  width: 1300px;
+  height: 645px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;;
   flex-wrap: wrap;
-  align-items: flex-start;
   align-content: space-around;
-  background-color: grey;
+  background-image: url("../images/nebula.jpg");
+  border-radius: 5px;
+  margin: auto;
+  position: relative;
+  right: 4%;
 }
 
 #board div {
   width: 150px;
   height: 150px;
+  background: -moz-linear-gradient(-45deg, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+  border-radius: 5px;
+}
+
+#boxMenuBoard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+
+#menu {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10px;
+  align-items: center;
+  background-color: #111111;
+}
+
+#newGame {
+  width: 90%;
+  height: 40px;
+  color: white;
   background-color: black;
+  font-family: arial;
+  font-weight: bold;
 }
