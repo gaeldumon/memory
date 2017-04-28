@@ -37,7 +37,6 @@ function getSource(nom) {
   return source;
 }
 
-// Copie l'array 'images'
 var randomImages = images.slice();
 
 var count = 0;
@@ -79,7 +78,7 @@ rCache.forEach(function(cache) {
     // 1er coup
     if (count === 1) {
       guess1 = event.target.childNodes[0];
-      // 2eme coup, tout ce se passe a ce niveau, il est decisif
+      // 2eme coup, tout se passe a ce niveau, il est decisif
     } else if (count === 2) {
       guess2 = event.target.childNodes[0];
       count = 0;
@@ -92,7 +91,7 @@ rCache.forEach(function(cache) {
         guess2.style.visibility = "visible";
         guess2.setAttribute("class", "match");
       } else {
-        // Retourne toutes les cartes au bout de 2.5s par defaut SAUF les images avec une classe 'match'
+        // Retourne toutes les cartes au bout de 1s par defaut sauf les images avec une classe 'match'
         setTimeout(function() {
           for (var i = 0; i < rCache.length; i++) {
             if (rCache[i].childNodes[0].classList.contains("match")) {
