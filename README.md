@@ -1,3 +1,3 @@
-# memory
+# Memory cards game
 Themes and functionalities are coming...
 Rule : You have to find the twin of each image by clicking on it. If this is a match : both twins stay visible, if not : they hide themselves! Goal is to get all the images.
