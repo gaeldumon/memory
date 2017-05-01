@@ -42,11 +42,23 @@ h1 {
   background-color: #111111;
 }
 
-#newGame {
+#movesCount {
   width: 90%;
   height: 40px;
-  color: white;
-  background-color: black;
-  font-family: arial;
+  margin-top: 10px;
   font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  font-family: arial;
+  color: white;
+}
+
+button {
+  width: 90%;
+  height: 40px;
+  margin-top: 5px;
+  background-color: black;
+  font-weight: bold;
+  font-family: arial;
+  color: white;
 }
