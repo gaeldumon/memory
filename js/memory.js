@@ -1,41 +1,76 @@
-var images = [
+var classic = [
   "bear",
-  "cat",
-  "dbz",
-  "hack",
-  "iceland",
-  "kix",
-  "pines",
-  "root",
-  "tarantino",
-  "thps",
-  "tron",
-  "neptune",
-  "wargames",
-  "will",
   "buffy",
   "bus",
-  "bear",
   "cat",
   "dbz",
   "hack",
   "iceland",
   "kix",
+  "neptune",
   "pines",
   "root",
   "tarantino",
   "thps",
   "tron",
-  "neptune",
   "wargames",
   "will",
+  "bear",
   "buffy",
-  "bus"
+  "bus",
+  "cat",
+  "dbz",
+  "hack",
+  "iceland",
+  "kix",
+  "neptune",
+  "pines",
+  "root",
+  "tarantino",
+  "thps",
+  "tron",
+  "wargames",
+  "will"
+];
+
+var images = [
+  "aladdin",
+  "ariel",
+  "aristochats",
+  "beauty",
+  "bernard",
+  "gusgus",
+  "hercule",
+  "lilo",
+  "lion",
+  "mulan",
+  "oliver",
+  "panpan",
+  "pocahontas",
+  "spaghetti",
+  "tarzan",
+  "moana",
+  "aladdin",
+  "ariel",
+  "aristochats",
+  "beauty",
+  "bernard",
+  "gusgus",
+  "hercule",
+  "lilo",
+  "lion",
+  "mulan",
+  "oliver",
+  "panpan",
+  "pocahontas",
+  "spaghetti",
+  "tarzan",
+  "moana"
 ];
 
 // Recupere la source de l'image et donc permetra de l'afficher
 function getSource(nom) {
-  var source = "../images/classic/" + nom + ".jpg";
+  var source = "../images/disney/" + nom + ".jpg";
   return source;
 }
 
@@ -63,8 +98,8 @@ var moves = 0;
 var guess1 = "";
 var guess2 = "";
 var rCache = [];
-
-//var randomImages = images.slice();
+var countGameEnding = 0;
+var movesCount = document.getElementById("movesCount");
 
 for (var i = 0; i < images.length; i++) {
   getRandomPermutation(images);
@@ -92,8 +127,10 @@ rCache.forEach(function(cache) {
       guess2 = event.target.childNodes[0];
       // "Round" fini, reset compteur
       count = 0;
-      // Comptage des coups (position a revoir?)
+      // Comptage des coups
       moves++;
+      countGameEnding++;
+      movesCount.textContent = moves;
 
       // Si il y a un match, chaque image gagne une classe 'match'
       if (guess1.src === guess2.src) {
@@ -107,6 +144,7 @@ rCache.forEach(function(cache) {
           for (var i = 0; i < rCache.length; i++) {
             if (rCache[i].childNodes[0].classList.contains("match")) {
               null;
+              countGameEnding++;
             } else {
               rCache[i].childNodes[0].style.visibility = "hidden";
               rCache[i].childNodes[0].setAttribute("class", "faceDown");
