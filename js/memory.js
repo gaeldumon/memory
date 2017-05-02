@@ -97,6 +97,7 @@ var disneyButton = document.getElementById("disneyTheme");
 var classicButton = document.getElementById("classicTheme");
 var board = document.getElementById("board");
 
+// Message start screen
 board.innerHTML = "<p>Welcome dear player.<br/>To get started please choose a theme on you left.</p>";
 
 disneyButton.addEventListener("click", function() {
