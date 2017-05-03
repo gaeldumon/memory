@@ -79,8 +79,8 @@ function appendTheme(theme) {
 
 function gameRefresh(theme) {
   board.innerHTML = "";
-  var body = document.getElementsByTagName('body')[0];
-  body.style.backgroundImage = 'url(../images / ' + theme + ' Back.jpg)';
+  let body = document.getElementsByTagName('body')[0];
+  body.style.backgroundImage = 'url(../images/' + theme + 'Back.jpg)';
   appendTheme(theme);
 }
 
@@ -108,4 +108,6 @@ newGameButton.addEventListener("click", function() {
   board.innerHTML = startScreenMsg;
   moves = 0;
   movesCount.textContent = moves;
+  let body = document.getElementsByTagName('body')[0];
+  body.style.backgroundImage = 'url(../images/nebula.jpg)';
 });
