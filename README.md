@@ -1,4 +1,4 @@
-# Memory cards game using HTML5, CSS3 and Javascript
+# Memory card game
 How to : 
 Reveal a first card by clicking on it.
 Reveal a second card.
