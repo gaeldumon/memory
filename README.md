@@ -1,3 +1,12 @@
-# Memory cards game
-Themes and functionalities are coming...
-Rule : You have to find the twin of each image by clicking on it. If this is a match : both twins stay visible, if not : they hide themselves! Goal is to get all the images.
+# Memory cards game using HTML5, CSS3 and Javascript
+How to : 
+Reveal a first card by clicking on it.
+Reveal a second card.
+If twin : both cards stay visible.
+If not : both cards are hidden.
+And so on.
+
+Goal : 
+Make all the pictures visible.
+
+Two different theme and set of pictures.
