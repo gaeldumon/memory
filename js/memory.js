@@ -54,7 +54,7 @@ function appendTheme(theme) {
           guess2 = event.target.childNodes[0];
           count = 0;
           moves += 1;
-          movesCount.textContent = moves;
+          movesCount.textContent = "Moves : " + moves;
 
           if (guess1.src === guess2.src) {
             guess1.style.visibility = "visible";
@@ -78,36 +78,48 @@ function appendTheme(theme) {
 }
 
 function gameRefresh(theme) {
-  board.innerHTML = "";
   let body = document.getElementsByTagName('body')[0];
+  board.innerHTML = "";
   body.style.backgroundImage = 'url(../images/' + theme + 'Back.jpg)';
   appendTheme(theme);
+}
+
+function colorIndicator(boutonA, boutonB, boutonC) {
+  boutonA.style.backgroundColor = "mediumPurple";
+  boutonB.style.backgroundColor = "mediumspringgreen";
+  boutonC.style.backgroundColor = "mediumspringgreen";
 }
 
 let newGameButton = document.getElementById("newGame");
 let disneyButton = document.getElementById("disneyTheme");
 let classicButton = document.getElementById("classicTheme");
 let board = document.getElementById("board");
-let startScreenMsg = "<p>Welcome dear player.<br/>To get started please choose a theme on you left.</p>";
+let startScreenMsg = "<p>Welcome dear player.<br/>To get started please choose a theme on your left.</p>";
 
+// ON LOAD INITIAL STATE (perhaps add event listener on load ?)
 board.innerHTML = startScreenMsg;
+movesCount.textContent = "";
+colorIndicator(newGameButton, classicButton, disneyButton);
 
-disneyButton.addEventListener("click", function() {
+disneyButton.addEventListener("click", function(event) {
   gameRefresh("disney");
   moves = 0;
-  movesCount.textContent = moves;
+  movesCount.textContent = "Moves : " + moves;
+  colorIndicator(event.target, classicButton, newGameButton);
 });
 
-classicButton.addEventListener("click", function() {
+classicButton.addEventListener("click", function(event) {
   gameRefresh("classic");
-  moves = 0;
-  movesCount.textContent = moves;
+  movesCount.textContent = "Moves : " + moves;
+  colorIndicator(event.target, disneyButton, newGameButton);
 });
 
-newGameButton.addEventListener("click", function() {
+newGameButton.addEventListener("click", function(event) {
+  startScreenMsg = "<p>Welcome dear player.<br/>To get started please choose a theme above.</p>";
   board.innerHTML = startScreenMsg;
   moves = 0;
-  movesCount.textContent = moves;
+  movesCount.textContent = "";
   let body = document.getElementsByTagName('body')[0];
   body.style.backgroundImage = 'url(../images/nebula.jpg)';
+  colorIndicator(event.target, disneyButton, classicButton);
 });
