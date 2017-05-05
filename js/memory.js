@@ -33,6 +33,7 @@ function appendTheme(theme) {
     let guess2 = "";
     let moves = 0;
     let gameEndCount = 0;
+    // Will contain every div elements which childs are img elements
     let rCaches = [];
     let movesCount = document.getElementById("movesCount");
 
