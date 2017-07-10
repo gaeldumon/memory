@@ -42,17 +42,19 @@ button:active {
 
   border-radius: 5px;
   background-color: rgba(49, 56, 59, 0.7);
+
 }
 
 #board p {
   color: mediumspringgreen;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 2.3em;
   font-family: courier;
 
+  text-align: center;
+  margin: auto;
   position: absolute;
-  left: 15px;
-  top: 0;
+  top : 25%;
 }
 
 #board div {
