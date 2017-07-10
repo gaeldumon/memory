@@ -74,7 +74,7 @@ function appendTheme(theme) {
             gameEndCount += 1;
             // Indicates in how many moves the player complete the board once all img elements are matched
             if (gameEndCount === 16) {
-              movesCount.textContent = "You made it in " + moves + " moves !";
+              endGameScreen(board, moves);
             }
           } else {
             // After 1 second the img elements are hidden behind their div elements again EXCEPT if they're marked as matched
@@ -91,6 +91,14 @@ function appendTheme(theme) {
       });
     });
   });
+}
+
+function endGameScreen(board, moves) {
+  let pElt = document.createElement("p");
+  let winMsg = "You made it in " + moves + " moves !";
+  board.innerHTML = "";
+  pElt.textContent = winMsg;
+  board.appendChild(pElt);
 }
 
 function gameRefresh(theme) {
@@ -125,7 +133,7 @@ let newGameButton = document.getElementById("newGame");
 let disneyButton = document.getElementById("disneyTheme");
 let classicButton = document.getElementById("classicTheme");
 let board = document.getElementById("board");
-let startScreenMsg = "<p>Welcome dear player.<br/>To get started please choose a theme in the MENU.<br/>To restart a game, click on the theme button again.</p>";
+let startScreenMsg = "<p>Welcome !<br/>To get started choose a theme on your left.<br/>To restart a game, click on restart.</p>";
 
 // DEFAULT ON LOAD - INITIAL STATE CALL
 initialState();
