@@ -32,7 +32,7 @@ function appendTheme(theme) {
     let guess1 = "";
     let guess2 = "";
     let moves = 0;
-    let gameEndCount = 0;
+    var gameEndCount = 0;
     // Will contain every div elements which childs are img elements
     let rCaches = [];
     let movesCount = document.getElementById("movesCount");
@@ -72,6 +72,7 @@ function appendTheme(theme) {
             guess2.style.visibility = "visible";
             guess2.setAttribute("class", "match");
             gameEndCount += 1;
+            //gameEndCount = 16;
             // Indicates in how many moves the player complete the board once all img elements are matched
             if (gameEndCount === 16) {
               endGameScreen(board, moves);
@@ -85,7 +86,7 @@ function appendTheme(theme) {
                   rCaches[i].childNodes[0].setAttribute("class", "faceDown");
                 }
               }
-            }, 1000);
+            }, 900);
           }
         }
       });
@@ -94,11 +95,13 @@ function appendTheme(theme) {
 }
 
 function endGameScreen(board, moves) {
-  let pElt = document.createElement("p");
-  let winMsg = "You made it in " + moves + " moves !";
+  let winMsg = "Datz it you made it in " + moves + " moves... which sucks btw.";
+  let divElt = document.createElement("h1");
+  divElt.setAttribute("id", "endGameScreen");
   board.innerHTML = "";
-  pElt.textContent = winMsg;
-  board.appendChild(pElt);
+  divElt.textContent = winMsg;
+  board.style.backgroundColor = "black";
+  board.appendChild(divElt);
 }
 
 function gameRefresh(theme) {
@@ -133,7 +136,7 @@ let newGameButton = document.getElementById("newGame");
 let disneyButton = document.getElementById("disneyTheme");
 let classicButton = document.getElementById("classicTheme");
 let board = document.getElementById("board");
-let startScreenMsg = "<p>Welcome !<br/>To get started choose a theme on your left.<br/>To restart a game, click on restart.</p>";
+let startScreenMsg = "<p>Welcome !<br/>To get started choose a theme on your left.</p>";
 
 // DEFAULT ON LOAD - INITIAL STATE CALL
 initialState();
