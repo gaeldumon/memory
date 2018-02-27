@@ -3,13 +3,13 @@ var divs = board.children;
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"
 ];
+var imgs = "";
 
-if (!document.getElementById("disney-theme")) {
-  for (var i = 0; i <= alphabet.length; i++) {
-    divs[i].firstChild.setAttribute("src", "assets/images/classic/" + alphabet[i] + ".jpg");
-  }
+if (document.getElementById("disney-theme")) {
+  imgs = "disney";
 } else {
-  for (var i = 0; i <= alphabet.length; i++) {
-    divs[i].firstChild.setAttribute("src", "assets/images/disney/" + alphabet[i] + ".jpg");
-  }
+  imgs = "classic";
 }
+
+for (let i = 0; i <= alphabet.length; i++)
+  divs[i].firstChild.setAttribute("src", "assets/images/" + imgs + "/" + alphabet[i] + ".jpg");
