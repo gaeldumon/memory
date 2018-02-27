@@ -11,5 +11,6 @@ if (document.getElementById("disney-theme")) {
   imgs = "classic";
 }
 
-for (let i = 0; i <= alphabet.length; i++)
+for (let i = 0; i <= alphabet.length; i++) {
   divs[i].firstChild.setAttribute("src", "assets/images/" + imgs + "/" + alphabet[i] + ".jpg");
+}
