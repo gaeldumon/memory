@@ -12,28 +12,27 @@ nav {
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 nav a {
-  margin-right: 20px;
+  height: 300px;
+  width: 300px;
   text-align: center;
   text-decoration: none;
   color: #ADAFB1;
+  font-size: 2em;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-#board {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-#board div, #board div img {
-  height: 150px;
-  width: 150px;
+.classic-button {
   background-color: grey;
+  opacity: 0.8;
+}
+
+.disney-button {
+  background-color: indigo;
+  opacity: 0.8;
 }
