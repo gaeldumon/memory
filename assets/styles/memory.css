@@ -30,10 +30,16 @@ nav a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 1300px;
+  height: 600px;
 }
 
 #board div, #board div img {
   height: 150px;
   width: 150px;
+}
+
+#board div {
   background-color: grey;
+  margin: 2px 2px 2px 2px;
 }
