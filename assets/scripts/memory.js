@@ -6,11 +6,8 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 var imgs = "";
 var moves = 0;
 
-if (document.getElementById("disney-theme")) {
-  imgs = "disney";
-} else {
-  imgs = "classic";
-}
+if (document.getElementById("disney-theme")) imgs = "disney";
+else imgs = "classic";
 
 for (let i = 0; i <= alphabet.length; i++) {
   divs[i].firstChild.setAttribute("src", "assets/images/" + imgs + "/" + alphabet[i] + ".jpg");
