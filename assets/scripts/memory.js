@@ -1,20 +1,71 @@
+var randomPermutation = function (array) {
+  let iRandom = i + Math.floor(Math.random() * (array.length - i));
+  let tmp = array[i];
+  array[i] = array[iRandom];
+  array[iRandom] = tmp;
+  return array;
+}
+
 var board = document.getElementById("board");
 var divs = board.children;
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"
 ];
-var imgs = "";
-var moves = 0;
+var themeImages = "";
+var matchCount = 0;
+var moveCount = 0;
+var matchCounter = document.getElementsByClassName("matchCounter")[0];
+var moveCounter = document.getElementsByClassName("moveCounter")[0];
+var guessCount = 0;
+var guess1;
+var guess2;
 
-if (document.getElementById("disney-theme")) imgs = "disney";
-else imgs = "classic";
+if (document.getElementById("disney-theme"))
+  themeImages = "disney";
+else
+  themeImages = "classic";
 
-for (let i = 0; i <= alphabet.length; i++) {
-  divs[i].firstChild.setAttribute("src", "assets/images/" + imgs + "/" + alphabet[i] + ".jpg");
+for (var i = 0; i <= alphabet.length; i++) {
+
+  randomPermutation(alphabet);
+
+  divs[i].firstChild.setAttribute("src", "assets/images/" + themeImages + "/" + alphabet[i] + ".jpg");
   divs[i].firstChild.style.visibility = "hidden";
 
   divs[i].addEventListener("click", function (e) {
+
     e.target.firstChild.style.visibility = "visible";
     e.target.firstChild.setAttribute("class", "cardUp");
-  })
+
+    guessCount += 1;
+
+    if (guessCount === 1) {
+      guess1 = e.target.firstChild;
+    } else if (guessCount === 2) {
+      guess2 = e.target.firstChild;
+      guessCount = 0;
+      moveCount += 1;
+      moveCounter.textContent = moveCount;
+
+      if (guess1.src === guess2.src) {
+        guess1.setAttribute("class", "match");
+        guess2.setAttribute("class", "match");
+        matchCount += 1;
+        matchCounter.textContent = matchCount;
+
+        if (matchCount === 16) {
+          matchCounter.textContent = "Tu gagnes en " + moveCount + " coups !";
+        }
+      } else {
+        setTimeout(function () {
+          for (var j = 0; j <= alphabet.length; j++) {
+            if (!divs[j].firstChild.classList.contains("match")) {
+              divs[j].firstChild.style.visibility = "hidden";
+              divs[j].firstChild.setAttribute("class", "cardDown");
+            }
+          }
+        }, 900);
+      }
+    }
+  });
 }

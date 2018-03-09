@@ -19,10 +19,14 @@ nav {
 nav a {
   height: 300px;
   width: 300px;
-  text-align: center;
   text-decoration: none;
-  color: #ADAFB1;
+  text-align: center;
+}
+
+nav a p {
+  color: white;
   font-size: 2em;
+  margin-top: 130px;
   margin-right: 10px;
   margin-left: 10px;
 }
@@ -33,6 +37,6 @@ nav a {
 }
 
 .disney-button {
-  background-color: indigo;
+  background-color: peachpuff;
   opacity: 0.8;
 }
