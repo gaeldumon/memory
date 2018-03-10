@@ -25,29 +25,32 @@ if (document.getElementById("disney-theme"))
 else
   themeImages = "classic";
 
-for (var i = 0; i <= alphabet.length; i++) {
+for (var i = 0; i < alphabet.length; i++) {
 
   randomPermutation(alphabet);
 
   divs[i].firstChild.setAttribute("src", "assets/images/" + themeImages + "/" + alphabet[i] + ".jpg");
   divs[i].firstChild.style.visibility = "hidden";
 
-  divs[i].addEventListener("click", function (e) {
+  divs[i].addEventListener("click", function (event) {
 
-    e.target.firstChild.style.visibility = "visible";
-    e.target.firstChild.setAttribute("class", "cardUp");
+    event.target.firstChild.style.visibility = "visible";
+    event.target.firstChild.setAttribute("class", "cardUp");
 
     guessCount += 1;
 
     if (guessCount === 1) {
-      guess1 = e.target.firstChild;
+      guess1 = event.target.firstChild;
+
     } else if (guessCount === 2) {
-      guess2 = e.target.firstChild;
+
+      guess2 = event.target.firstChild;
       guessCount = 0;
       moveCount += 1;
       moveCounter.textContent = moveCount;
 
       if (guess1.src === guess2.src) {
+
         guess1.setAttribute("class", "match");
         guess2.setAttribute("class", "match");
         matchCount += 1;
@@ -56,16 +59,28 @@ for (var i = 0; i <= alphabet.length; i++) {
         if (matchCount === 16) {
           matchCounter.textContent = "Tu gagnes en " + moveCount + " coups !";
         }
+
       } else {
+
         setTimeout(function () {
-          for (var j = 0; j <= alphabet.length; j++) {
+
+          for (var j = 0; j < divs.length; j++) {
+
             if (!divs[j].firstChild.classList.contains("match")) {
+
               divs[j].firstChild.style.visibility = "hidden";
               divs[j].firstChild.setAttribute("class", "cardDown");
+
             }
+
           }
-        }, 900);
+
+        }, 5000);
+
       }
+
     }
-  });
+
+  }, false);
+
 }
