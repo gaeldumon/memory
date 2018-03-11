@@ -64,7 +64,7 @@ for (var i = 0; i < alphabet.length; i++) {
 
         setTimeout(function () {
 
-          for (var j = 0; j < divs.length; j++) {
+          for (var j = 0; j < alphabet.length; j++) {
 
             if (!divs[j].firstChild.classList.contains("match")) {
 
@@ -75,7 +75,7 @@ for (var i = 0; i < alphabet.length; i++) {
 
           }
 
-        }, 5000);
+        }, 900);
 
       }
 
