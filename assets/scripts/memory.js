@@ -19,6 +19,7 @@ var moveCounter = document.getElementsByClassName("moveCounter")[0];
 var guessCount = 0;
 var guess1;
 var guess2;
+var cheatCount = false;
 
 if (document.getElementById("disney-theme"))
   themeImages = "disney";
@@ -27,9 +28,7 @@ else
 
 for (var i = 0; i < alphabet.length; i++) {
 
-  randomPermutation(alphabet);
-
-  divs[i].firstChild.setAttribute("src", "assets/images/" + themeImages + "/" + alphabet[i] + ".jpg");
+  divs[i].firstChild.setAttribute("src", "assets/images/" + themeImages + "/" + randomPermutation(alphabet)[i] + ".jpg");
   divs[i].firstChild.style.visibility = "hidden";
 
   divs[i].addEventListener("click", function (event) {
@@ -43,7 +42,6 @@ for (var i = 0; i < alphabet.length; i++) {
       guess1 = event.target.firstChild;
 
     } else if (guessCount === 2) {
-
       guess2 = event.target.firstChild;
       guessCount = 0;
       moveCount += 1;
@@ -55,6 +53,14 @@ for (var i = 0; i < alphabet.length; i++) {
         guess2.setAttribute("class", "match");
         matchCount += 1;
         matchCounter.textContent = matchCount;
+
+        var matchMsg = document.createElement("p");
+        matchMsg.setAttribute("class", "matchMsg");
+        matchMsg.textContent = "It's a match!";
+        event.target.appendChild(matchMsg);
+        setInterval(function () {
+          matchMsg.style.display = "none";
+        }, 500);
 
         if (matchCount === 16) {
           matchCounter.textContent = "Tu gagnes en " + moveCount + " coups !";
@@ -82,5 +88,4 @@ for (var i = 0; i < alphabet.length; i++) {
     }
 
   }, false);
-
 }

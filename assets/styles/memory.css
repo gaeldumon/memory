@@ -8,12 +8,8 @@ body {
   font-family: sans-serif;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 500px;
+h1 {
+  margin: 0;
 }
 
 nav {
@@ -23,6 +19,8 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 nav a {
@@ -32,8 +30,27 @@ nav a {
   color: #ADAFB1;
 }
 
-.game-info {
-  width: 100%;
+.main-game-zone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.gameStats {
+  background-color: rgba(98, 228, 98, 0.2);
+  height: 92%;
+  width: 20%;
+}
+
+.gameStats p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 25px;
+  margin-top: 25px;
+  max-width: 100%;
 }
 
 #board {
@@ -42,8 +59,9 @@ nav a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 1300px;
-  height: 600px;
+  width: 70%;
+  height: 90%;
+  margin-bottom: 50px;
 }
 
 #board div, #board div img {
@@ -58,4 +76,28 @@ nav a {
 
 #disney-theme #board div {
   background-color: peachpuff;
+}
+
+.matchMsg {
+  position: relative;
+  bottom: 65px;
+  font-size: 1.6em;
+  font-weight: bold;
+  font-family: arial;
+  text-align: center;
+  color: orange;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-name: fadeup;
+}
+
+@keyframes fadeup {
+  from {
+    opacity: 1;
+    bottom: 65px;
+  }
+  to {
+    opacity: 0;
+    bottom: 80px;
+  }
 }
