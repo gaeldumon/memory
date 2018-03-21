@@ -45,14 +45,14 @@ for (var i = 0; i < alphabet.length; i++) {
       guess2 = event.target.firstChild;
       guessCount = 0;
       moveCount += 1;
-      moveCounter.textContent = moveCount;
+      moveCounter.textContent = "MOVES : " + moveCount;
 
       if (guess1.src === guess2.src) {
 
         guess1.setAttribute("class", "match");
         guess2.setAttribute("class", "match");
         matchCount += 1;
-        matchCounter.textContent = matchCount;
+        matchCounter.textContent = "MATCH : " + matchCount;
 
         var matchMsg = document.createElement("p");
         matchMsg.setAttribute("class", "matchMsg");
