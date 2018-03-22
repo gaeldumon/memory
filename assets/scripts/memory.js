@@ -76,7 +76,6 @@ for (var i = 0; i < alphabet.length; i++) {
 
               divs[j].firstChild.style.visibility = "hidden";
               divs[j].firstChild.setAttribute("class", "cardDown");
-
             }
 
           }
