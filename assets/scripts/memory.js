@@ -57,10 +57,10 @@ for (var i = 0; i < alphabet.length; i++) {
         var matchMsg = document.createElement("p");
         matchMsg.setAttribute("class", "matchMsg");
         matchMsg.textContent = "It's a match!";
-        event.target.appendChild(matchMsg);
+        board.appendChild(matchMsg);
         setInterval(function () {
           matchMsg.style.display = "none";
-        }, 500);
+        }, 1200);
 
         if (matchCount === 16) {
           matchCounter.textContent = "Tu gagnes en " + moveCount + " coups !";

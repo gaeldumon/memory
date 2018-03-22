@@ -38,9 +38,8 @@ nav a {
 }
 
 .gameStats {
-  background-color: rgba(98, 228, 98, 0.2);
   height: 92%;
-  width: 15%;
+  width: 10%;
 }
 
 .gameStats p {
@@ -62,6 +61,7 @@ nav a {
   width: 70%;
   height: 90%;
   margin-bottom: 50px;
+  margin-right: 100px;
 }
 
 #board div, #board div img {
@@ -70,23 +70,24 @@ nav a {
 }
 
 #board div {
-  background-color: grey;
+  background-color: #2a5184;
   margin: 2px 2px 2px 2px;
 }
 
 #disney-theme #board div {
-  background-color: peachpuff;
+  background-color: #9cdbdb;
 }
 
 .matchMsg {
-  position: relative;
-  bottom: 65px;
-  font-size: 1.6em;
+  position: absolute;
+  margin: auto;
+  bottom: 90px;
+  font-size: 5em;
   font-weight: bold;
   font-family: arial;
   text-align: center;
   color: orange;
-  animation-duration: 1.5s;
+  animation-duration: 3s;
   animation-timing-function: ease-out;
   animation-name: fadeup;
 }
@@ -94,10 +95,10 @@ nav a {
 @keyframes fadeup {
   from {
     opacity: 1;
-    bottom: 65px;
+    bottom: 90px;
   }
   to {
     opacity: 0;
-    bottom: 80px;
+    bottom: 190px;
   }
 }
