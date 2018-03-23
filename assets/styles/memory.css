@@ -93,7 +93,7 @@ nav a:hover {
   font-family: arial;
   text-align: center;
   color: orange;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-name: fadeup;
 }
