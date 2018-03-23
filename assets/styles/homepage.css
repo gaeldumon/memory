@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -6,23 +10,31 @@ body {
   background-color: #171F28;
   color: #ADAFB1;
   font-family: sans-serif;
+  height: 100%;
 }
 
 nav {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 25%;
+  margin-top: 50px;
 }
 
-nav a img {
-  height: 300px;
-  width: 300px;
+nav a {
+  text-decoration: none;
+  color: #ADAFB1;
+  font-size: 2em;
+  font-weight: bold;
 }
 
-nav p {
-  text-align: center;
-  font-size: 1.5em;
+nav a:hover {
+  color: #31613b;
+}
+
+.separator {
+  width: 20px;
+  height: 20px;
+  background-color: #31613b;
 }

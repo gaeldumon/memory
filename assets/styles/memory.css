@@ -13,21 +13,27 @@ h1 {
 }
 
 nav {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  margin-bottom: 50px;
+  width: 30%;
+  height: 50px;
   margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: 2px solid #31613b;
+  border-bottom: 2px solid #31613b;
 }
 
 nav a {
-  margin-right: 20px;
-  text-align: center;
   text-decoration: none;
   color: #ADAFB1;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #31613b;
 }
 
 .main-game-zone {
