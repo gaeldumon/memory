@@ -5,11 +5,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   background-color: #171F28;
   color: #ADAFB1;
   font-family: sans-serif;
+  margin: auto;
   height: 100%;
 }
 
