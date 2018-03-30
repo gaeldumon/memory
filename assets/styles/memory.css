@@ -29,15 +29,15 @@ header {
 }
 
 nav {
-  width: 20%;
   margin-right: 150px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 nav a {
+  margin-right: 50px;
   text-decoration: none;
   color: #ADAFB1;
   font-size: 1.5em;
