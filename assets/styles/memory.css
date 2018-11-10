@@ -6,7 +6,7 @@ body {
   align-items: center;
   background-color: #171F28;
   color: #ADAFB1;
-  font-family: sans-serif;
+  font-family: 'Permanent Marker', cursive;
 }
 
 header {
@@ -20,12 +20,13 @@ header {
 }
 
 .header-logo {
-  margin-left: 150px;
-}
-
-.header-logo img {
   width: 52px;
   height: 52px;
+  margin-left: 180px;
+}
+
+header h1 {
+  color: #31613b;
 }
 
 nav {
@@ -51,25 +52,24 @@ nav a:hover {
 .main-game-zone {
   margin-top: 70px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .gameStats {
-  width: 64.5%;
-  margin-bottom: 40px;
+  width: 300px;
+  height: 613px;
   background-color: rgba(242, 242, 242, 0.2);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .gameStats p {
   margin-left: 15px;
   font-size: 1.5em;
-  font-weight: lighter;
 }
 
 #board {
@@ -78,7 +78,8 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 70%;
+  width: 1250px;
+  height: 600px;
   margin-bottom: 50px;
 }
 
@@ -99,10 +100,10 @@ nav a:hover {
 .matchMsg {
   position: absolute;
   margin: auto;
-  bottom: 90px;
-  font-size: 5em;
+  bottom: 350px;
+  font-size: 7em;
   font-weight: bold;
-  font-family: arial;
+  font-family: 'Permanent Marker', cursive;
   text-align: center;
   color: orange;
   animation-duration: 2s;
@@ -113,10 +114,11 @@ nav a:hover {
 @keyframes fadeup {
   from {
     opacity: 1;
-    bottom: 90px;
+    bottom: 350px;
   }
+
   to {
     opacity: 0;
-    bottom: 190px;
+    bottom: 450px;
   }
 }

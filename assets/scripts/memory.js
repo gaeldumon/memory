@@ -56,7 +56,7 @@ for (var i = 0; i < alphabet.length; i++) {
 
         var matchMsg = document.createElement("p");
         matchMsg.setAttribute("class", "matchMsg");
-        matchMsg.textContent = "It's a match!";
+        matchMsg.textContent = "IT'S A MATCH !";
         board.appendChild(matchMsg);
         setInterval(function () {
           matchMsg.style.display = "none";
