@@ -8,9 +8,9 @@ var randomPermutation = function (array) {
 
 var board = document.getElementById("board");
 var divs = board.children;
-var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"
-];
+var a = "abcdefghijklmnopabcdefghijklmnop";
+var alphabet = a.split("");
+
 var themeImages = "";
 var matchCount = 0;
 var moveCount = 0;
@@ -70,7 +70,7 @@ for (var i = 0; i < alphabet.length; i++) {
 
         setTimeout(function () {
 
-          for (var j = 0; j < alphabet.length; j++) {
+          for (var j = 0; j <= alphabet.length; j++) {
 
             if (!divs[j].firstChild.classList.contains("match")) {
 
