@@ -14,6 +14,7 @@ var matchCount = 0;
 var moveCount = 0;
 var matchCounter = document.getElementsByClassName("matchCounter")[0];
 var moveCounter = document.getElementsByClassName("moveCounter")[0];
+var highScoresLog = document.getElementsByClassName("highScoresLog")[0];
 var guessCount = 0;
 var guess1;
 var guess2;
@@ -62,6 +63,8 @@ for (var i = 0; i < alphabet.length; i++) {
         /*Win state => 16 matchs -> end of the game*/
         if (matchCount === 16) {
           matchCounter.textContent = "Tu gagnes en " + moveCount + " coups !";
+          localStorage.setItem('score', moveCount);
+          highScoresLog.textContent = localStorage.getItem('score');
         }
         /*Lose state => guess 1 & 2 are no match (different cards aka different src) -> all cards w/o match class are switched off*/
       } else {
