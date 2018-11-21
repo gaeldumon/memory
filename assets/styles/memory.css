@@ -19,7 +19,7 @@ header {
 }
 
 header h1 {
-  color: #00ff0e;
+  color: orange;
   font-size: 3.8em;
   margin-left: 250px;
 }
@@ -34,13 +34,13 @@ nav {
 
 nav a {
   margin-right: 50px;
-  color: #00ff0e;
+  color: orange;
   text-decoration: none;
   font-size: 1.5em;
 }
 
 nav a:hover {
-  color: purple;
+  color: lightgrey;
 }
 
 .main-game-zone {
@@ -64,7 +64,7 @@ nav a:hover {
 
 .gameStats p {
   font-size: 1.5em;
-  color: #00ff0e;
+  color: orange;
 }
 
 #board {
@@ -92,13 +92,12 @@ nav a:hover {
 
 .matchMsg {
   position: absolute;
-  bottom: 320px;
-  left: 610px;
+  left: 32.5%;
   font-size: 7em;
   font-weight: bold;
   font-family: 'Permanent Marker', cursive;
   text-align: center;
-  color: purple;
+  color: orange;
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-name: fadeup;
@@ -107,11 +106,11 @@ nav a:hover {
 @keyframes fadeup {
   from {
     opacity: 1;
-    bottom: 320px;
+    bottom: 25%;
   }
 
   to {
     opacity: 0;
-    bottom: 450px;
+    bottom: 35%;
   }
 }
