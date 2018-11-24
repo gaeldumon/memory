@@ -67,6 +67,10 @@ nav a:hover {
   color: orange;
 }
 
+.highScore {
+  margin-top: 0;
+}
+
 #board {
   display: flex;
   flex-direction: row;
@@ -91,6 +95,7 @@ nav a:hover {
 }
 
 .matchMsg {
+  z-index: -1;
   position: absolute;
   left: 32.5%;
   font-size: 7em;
