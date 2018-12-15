@@ -75,6 +75,7 @@ for (var i = 0; i < cards_names.length; i++) {
       text_moves.textContent = "MOVES : " + count_moves;
 
       if (guess1.src === guess2.src) {
+        count_matches++;
         guess1.setAttribute("class", "match");
         guess2.setAttribute("class", "match");
         text_matches.textContent = "MATCH : " + count_matches;
