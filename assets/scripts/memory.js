@@ -47,8 +47,7 @@ var count_matches = 0;
 var count_moves = 0;
 var count_guesses = 0;
 
-localStorage.setItem('s', count_moves);
-text_highScore.textContent = localStorage.getItem('s');
+
 
 if (document.getElementById("disney-theme")) {
   theme = "disney";
@@ -78,17 +77,16 @@ for (var i = 0; i < cards_names.length; i++) {
       if (guess1.src === guess2.src) {
         guess1.setAttribute("class", "match");
         guess2.setAttribute("class", "match");
-        count_matches = 16;
         text_matches.textContent = "MATCH : " + count_matches;
 
         createFurtiveMessage("matchMsg", "IT'S A MATCH", board, 1200);
 
         /*Win state => 16 matchs -> end of the game*/
         if (count_matches === 16) {
-          localStorage.setItem('s', count_moves);
-          text_highScore.textContent = localStorage.getItem('s');
+          localStorage.setItem('score', count_moves);
+          text_highScore.textContent = localStorage.getItem('score');
         }
-        /*Lose state => guess 1 & 2 are no match (different cards different src) -> all cards w/o match class are switched off*/
+        /*"Lose" state => guess 1 & 2 are no match (different cards different src) -> all cards w/o match class are switched off*/
       } else {
         hideElements(cards_names, cards_down, "match", "cardDown", 900);
       }

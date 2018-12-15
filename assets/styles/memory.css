@@ -95,7 +95,6 @@ nav a:hover {
 }
 
 .matchMsg {
-  z-index: -1;
   position: absolute;
   left: 32.5%;
   font-size: 7em;
