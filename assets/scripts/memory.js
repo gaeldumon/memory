@@ -31,6 +31,20 @@ function hideElements(array, elementList, classToOverride, newClass, delay) {
   }, delay);
 }
 
+function displayFinishMsg(board, score) {
+  board.style.opacity = '0.8';
+  let text_finish = document.createElement("p");
+  text_finish.textContent = "Ca y est t'as fini! Tu termines en " + score + " coups, c'est pas mal!";
+  text_finish.setAttribute("class", finishMsg);
+  board.appendChild(text_finish);
+  text_finish.style.position = 'absolute';
+  text_finish.style.left = '32.5%';
+  text_finish.style.bottom = '25%';
+  text_finish.style.fontFamily = "Permanent Marker";
+  text_finish.style.fontSize = '5em';
+  text_finish.style.color = 'orange';
+}
+
 /*html elements*/
 var board = document.getElementById("board");
 var body = document.getElementsByTagName("body")[0];
@@ -75,7 +89,7 @@ for (var i = 0; i < cards_names.length; i++) {
       text_moves.textContent = "MOVES : " + count_moves;
 
       if (guess1.src === guess2.src) {
-        count_matches++;
+        count_matches += 1;
         guess1.setAttribute("class", "match");
         guess2.setAttribute("class", "match");
         text_matches.textContent = "MATCH : " + count_matches;
