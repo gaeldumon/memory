@@ -1,4 +1,4 @@
-/*Shuffles indexes of an array given as a parameter, returns this array shuffled*/
+/* Shuffles indexes of an array given as a parameter, returns this array shuffled */
 function shuffleArray(array) {
   for (let i = 0; i < array.length; i++) {
     let iRandom = i + Math.floor(Math.random() * (array.length - i));
@@ -9,7 +9,8 @@ function shuffleArray(array) {
   return array;
 }
 
-/*Creates text, links it to a class name in the html or css files, appends it to a parent element & makes it disapear in x sec*/
+/* Creates text, add a class name to it (class name already in css file if styling needed)
+   appends it to a parent element & makes it disapear in x sec */
 function createFurtiveMessage(cssClass, text, parent, time) {
   var message = document.createElement("p");
   message.setAttribute("class", cssClass);
@@ -32,20 +33,22 @@ function hideElements(array, elementList, classToOverride, newClass, delay) {
 }
 
 function displayFinishMsg(board, score) {
-  board.style.opacity = '0.8';
-  let text_finish = document.createElement("p");
-  text_finish.textContent = "Ca y est t'as fini! Tu termines en " + score + " coups, c'est pas mal!";
-  text_finish.setAttribute("class", finishMsg);
-  board.appendChild(text_finish);
+  board.style.opacity = '0.3';
+  var text_finish = document.createElement("p");
+  text_finish.textContent = "Tu termines en " + score + " coups ! Pas mal du tout";
+  text_finish.setAttribute("class", "finishMsg");
+  body.appendChild(text_finish);
   text_finish.style.position = 'absolute';
-  text_finish.style.left = '32.5%';
-  text_finish.style.bottom = '25%';
+  text_finish.style.width = '40%';
+  text_finish.style.left = '33%';
+  text_finish.style.bottom = '21%';
+  text_finish.style.textAlign = 'center';
   text_finish.style.fontFamily = "Permanent Marker";
   text_finish.style.fontSize = '5em';
   text_finish.style.color = 'orange';
 }
 
-/*html elements*/
+/* Getting html elements */
 var board = document.getElementById("board");
 var body = document.getElementsByTagName("body")[0];
 var text_matches = document.getElementsByClassName("matches")[0];
@@ -60,8 +63,6 @@ var guess2;
 var count_matches = 0;
 var count_moves = 0;
 var count_guesses = 0;
-
-
 
 if (document.getElementById("disney-theme")) {
   theme = "disney";
@@ -88,7 +89,7 @@ for (var i = 0; i < cards_names.length; i++) {
       count_moves += 1;
       text_moves.textContent = "MOVES : " + count_moves;
 
-      if (guess1.src === guess2.src) {
+      if (guess1.src === guess2.src && count_matches < 2) {
         count_matches += 1;
         guess1.setAttribute("class", "match");
         guess2.setAttribute("class", "match");
@@ -96,10 +97,9 @@ for (var i = 0; i < cards_names.length; i++) {
 
         createFurtiveMessage("matchMsg", "IT'S A MATCH", board, 1200);
 
-        /*Win state => 16 matchs -> end of the game*/
+        /* Win state => 16 matchs -> end of the game */
         if (count_matches === 16) {
-          localStorage.setItem('score', count_moves);
-          text_highScore.textContent = localStorage.getItem('score');
+          displayFinishMsg(board, count_moves);
         }
         /*"Lose" state => guess 1 & 2 are no match (different cards different src) -> all cards w/o match class are switched off*/
       } else {
