@@ -1,4 +1,5 @@
 /* Shuffles indexes of an array given as a parameter, returns this array shuffled */
+
 function shuffleArray(array) {
   for (let i = 0; i < array.length; i++) {
     let iRandom = i + Math.floor(Math.random() * (array.length - i));
@@ -11,6 +12,7 @@ function shuffleArray(array) {
 
 /* Creates text, add a class name to it (class name already in css file if styling needed)
    appends it to a parent element & makes it disapear in x sec */
+
 function createFurtiveMessage(cssClass, text, parent, time) {
   var message = document.createElement("p");
   message.setAttribute("class", cssClass);
@@ -20,6 +22,7 @@ function createFurtiveMessage(cssClass, text, parent, time) {
     message.style.display = "none";
   }, time);
 }
+
 
 function hideElements(array, elementList, classToOverride, newClass, delay) {
   setTimeout(function () {
@@ -31,6 +34,7 @@ function hideElements(array, elementList, classToOverride, newClass, delay) {
     }
   }, delay);
 }
+
 
 function displayFinishMsg(board, score) {
   board.style.opacity = '0.3';
@@ -97,11 +101,11 @@ for (var i = 0; i < cards_names.length; i++) {
 
         createFurtiveMessage("matchMsg", "IT'S A MATCH", board, 1200);
 
-        /* Win state => 16 matchs -> end of the game */
+        // WIN STATE => 16 matchs -> end of the game
         if (count_matches === 16) {
           displayFinishMsg(board, count_moves);
         }
-        /*"Lose" state => guess 1 & 2 are no match (different cards different src) -> all cards w/o match class are switched off*/
+        // LOSE STATE => guess 1 & 2 are no match (different cards different src) --> all cards w/o match class are switched off
       } else {
         hideElements(cards_names, cards_down, "match", "cardDown", 900);
       }
