@@ -24,10 +24,10 @@ function createFurtiveMessage(cssClass, text, parent, time) {
 }
 
 
-function hideElements(array, elementList, classToOverride, newClass, delay) {
+function hideElements(array, elementList, previousClass, newClass, delay) {
   setTimeout(function () {
     for (let i = 0; i <= array.length; i++) {
-      if (!elementList[i].firstChild.classList.contains(classToOverride)) {
+      if (!elementList[i].firstChild.classList.contains(previousClass)) {
         elementList[i].firstChild.style.visibility = "hidden";
         elementList[i].firstChild.setAttribute("class", newClass);
       }
@@ -39,7 +39,7 @@ function hideElements(array, elementList, classToOverride, newClass, delay) {
 function displayFinishMsg(board, score) {
   board.style.opacity = '0.3';
   var text_finish = document.createElement("p");
-  text_finish.textContent = "Tu termines en " + score + " coups ! Pas mal du tout";
+  text_finish.textContent = "Tu termines en " + score + " coups ! Pas mal du tout !";
   text_finish.setAttribute("class", "finishMsg");
   body.appendChild(text_finish);
   text_finish.style.position = 'absolute';
@@ -67,6 +67,15 @@ var guess2;
 var count_matches = 0;
 var count_moves = 0;
 var count_guesses = 0;
+
+var highScore_str = document.getElementsByClassName("highScore")[0];
+var highScore = localStorage.getItem("highScore_loc");
+
+if (highScore == undefined) {
+  highScore = 0
+}
+
+highScore_str.textContent = highScore;
 
 if (document.getElementById("disney-theme")) {
   theme = "disney";
@@ -102,8 +111,9 @@ for (var i = 0; i < cards_names.length; i++) {
         createFurtiveMessage("matchMsg", "IT'S A MATCH", board, 1200);
 
         // WIN STATE => 16 matchs -> end of the game
-        if (count_matches === 16) {
+        if (count_matches === 1) {
           displayFinishMsg(board, count_moves);
+          localStorage.setItem("highScore_loc", count_moves.toString());
         }
         // LOSE STATE => guess 1 & 2 are no match (different cards different src) --> all cards w/o match class are switched off
       } else {
