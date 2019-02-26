@@ -1,2 +1,2 @@
-# BE KIND REMIND
-#### Memory card game 
+# Be Kind Remind
+A memory game in the browser
