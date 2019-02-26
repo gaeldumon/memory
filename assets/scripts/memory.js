@@ -111,7 +111,7 @@ for (var i = 0; i < cards_names.length; i++) {
         createFurtiveMessage("matchMsg", "IT'S A MATCH", board, 1200);
 
         // WIN STATE => 16 matchs -> end of the game
-        if (count_matches === 1) {
+        if (count_matches === 16) {
           displayFinishMsg(board, count_moves);
           localStorage.setItem("highScore_loc", count_moves.toString());
         }
