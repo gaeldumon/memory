@@ -86,12 +86,12 @@ nav a:hover {
 }
 
 #board div {
-  background-image: url("../images/card_back_classic.png");
+  background-image: url("../assets/images/card_back_classic.png");
   margin: 2px 2px 2px 2px;
 }
 
 #disney-theme #board div {
-  background-image: url("../images/card_back_disney.png");
+  background-image: url("../assets/images/card_back_disney.png");
 }
 
 .matchMsg {
