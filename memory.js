@@ -108,7 +108,8 @@ for (var i = 0; i < cards_names.length; i++) {
 	  		count_moves += 1;
 	  		text_moves.textContent = "MOVES : " + count_moves;
 
-	      	if (guess1.src === guess2.src && count_matches < 2) {
+	      	if (guess1.src === guess2.src && count_matches < 16) {
+
 	        	count_matches += 1;
 	        	guess1.setAttribute("class", "match");
 	        	guess2.setAttribute("class", "match");
