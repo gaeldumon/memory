@@ -1,3 +1,7 @@
+/*************************************************************************************
+**									BE KIND REMIND									**
+**************************************************************************************/
+
 /* Shuffles indexes of an array given as a parameter, returns this array shuffled */
 function shuffleArray(array) {
 	for (let i = 0; i < array.length; i++) {
@@ -5,7 +9,7 @@ function shuffleArray(array) {
 	    let tmp = array[i];
 	    array[i] = array[iRandom];
 	    array[iRandom] = tmp;
-  }
+  	}
   return array;
 }
 
