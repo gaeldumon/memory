@@ -5,4 +5,4 @@ This was my very very first own personal project. Don't click the card too fast 
 * Two sets of cards
 * Best score handling
 
-[Screenshot](screenshots/bekind-1.png)
+![Screenshot](screenshots/bekind-1.png)
